@@ -1,0 +1,34 @@
+{
+  "cart": [],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Смартфоны"
+    },
+    {
+      "id": 2,
+      "title": "Ноутбуки"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "image": "https://placehold.co/600x400",
+      "title": "iPhone 10",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "title": "Samsung note 2",
+      "image": "https://placehold.co/600x400",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "title": "Acer ,fkf,fk",
+      "image": "https://placehold.co/600x400",
+      "categoryId": 2
+    }
+  ],
+  "users": []
+}

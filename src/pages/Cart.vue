@@ -1,11 +1,26 @@
 <template>
-    <div class="v-cart">
-        Корзина
-    </div>
+    <v-container>
+        <div>
+            Сумма: {{ cart.total }}р
+        </div>
+
+        <hr>
+
+        <div v-for="product in cart.products">
+            <img :src="product.thumbnail" alt="">
+
+            <h6>{{ product.title }}</h6>
+
+            <div>{{ product.price }}</div>
+        </div>
+    </v-container>
 </template>
 
-<style>
-    .v-cart {
-        padding: 10px 0px;
-    }
-</style>
+<script setup>
+    import { useCart } from '@/composables';
+    import VContainer from '@/components/VContainer.vue';
+
+    const { cart, getCart } = useCart();
+
+    getCart();
+</script>

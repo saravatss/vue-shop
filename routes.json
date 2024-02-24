@@ -1,0 +1,4 @@
+{
+    "/catalog": "/categories",
+    "/catalog/:category": "/products?categoryId=:category"
+}

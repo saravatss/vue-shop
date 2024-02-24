@@ -1,11 +1,18 @@
 <template>
     <footer class="v-footer">
-        jgjgjg
+        <v-container>
+            sdfvsdv
+        </v-container>
     </footer>
 </template>
 
+<script setup>
+    import VContainer from '@/components/VContainer.vue';
+</script>
+
 <style>
     .v-footer {
-        padding: 10px 0px;
+        border-top: 1px solid;
+        padding: 10px 0;
     }
 </style>

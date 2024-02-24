@@ -1,15 +1,18 @@
 <template>
-    <router-link
+    <router-link 
         class="v-logo"
+        to="/"
     />
-
 </template>
 
 <style>
     .v-logo {
         display: block;
-        background-color: black;
+        width: 80px;
         height: 40px;
-        width: 50px;
+
+        background: #000;
+
+        border-radius: 5px;
     }
 </style>
