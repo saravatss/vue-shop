@@ -11,7 +11,13 @@ export function useAuth () {
     function onLogin (params) {
         AuthApiService.login(params)
             .then(data => {
-                localStorage.setItem('token', data.token);
+                if (!data.length) {
+                    alert('Не верный логин или пароль')
+
+                    return;
+                }
+
+                localStorage.setItem('user', JSON.stringify(data[0]));
 
                 authInit();
 
@@ -20,14 +26,25 @@ export function useAuth () {
     }
 
     function getUser () {
-        AuthApiService.getUser()
+        const userId = JSON.parse(localStorage.getItem('user'));
+
+        AuthApiService.getUser(userId.id)
             .then(data => {
-                user.value = data;
+                user.value = data[0];
             });
     }
 
+    function logout () {
+        localStorage.removeItem('user');
+
+        isAuth.value = false;
+        user.value = null;
+
+        router.push('/');
+    }
+
     function authInit () {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('user');
 
         if (!token) {
             return;
@@ -38,10 +55,19 @@ export function useAuth () {
         getUser();
     }
 
+    function updateUser (id, params) {
+        AuthApiService.updateUser(id, params)
+        .then(data => {
+            user.value = data;
+        });
+    }
+
     return {
         isAuth,
         user,
         authInit,
-        onLogin
+        onLogin,
+        logout,
+        updateUser
     }
 }

@@ -1,5 +1,28 @@
 {
-  "cart": [],
+  "orders": [],
+  "cart": [
+    {
+      "title": "Samsung note 2",
+      "image": "https://placehold.co/600x400",
+      "price": 5000,
+      "id": 2,
+      "quantity": 7
+    },
+    {
+      "title": "iPhone 10",
+      "image": "https://placehold.co/600x400",
+      "price": 5000,
+      "id": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Samsung note 2",
+      "image": "https://placehold.co/600x400",
+      "price": 7000,
+      "id": 5,
+      "quantity": 1
+    }
+  ],
   "categories": [
     {
       "id": 1,
@@ -15,20 +38,67 @@
       "id": 1,
       "image": "https://placehold.co/600x400",
       "title": "iPhone 10",
-      "categoryId": 1
+      "categoryId": 1,
+      "price": 10000
     },
     {
       "id": 2,
       "title": "Samsung note 2",
       "image": "https://placehold.co/600x400",
-      "categoryId": 1
+      "categoryId": 1,
+      "price": 5000
     },
     {
       "id": 3,
       "title": "Acer ,fkf,fk",
       "image": "https://placehold.co/600x400",
-      "categoryId": 2
+      "categoryId": 2,
+      "price": 6000
+    },
+    {
+      "id": 4,
+      "image": "https://placehold.co/600x400",
+      "title": "iPhone 10",
+      "categoryId": 1,
+      "price": 5000
+    },
+    {
+      "id": 5,
+      "title": "Samsung note 2",
+      "image": "https://placehold.co/600x400",
+      "categoryId": 1,
+      "price": 7000
+    },
+    {
+      "id": 6,
+      "title": "Acer ,fkf,fk",
+      "image": "https://placehold.co/600x400",
+      "categoryId": 2,
+      "price": 15000
     }
   ],
-  "users": []
+  "users": [
+    {
+      "login": "Test2",
+      "lastname": "Петров",
+      "firstname": "Ваня2123",
+      "birthday": "2024-02-15",
+      "email": "test@mail.ru",
+      "phone": "+79528889797",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 1
+    },
+    {
+      "login": "BigBoss",
+      "lastname": "Петров",
+      "firstname": "Петя",
+      "birthday": "2024-02-15",
+      "email": "test@mail.ru",
+      "phone": "+79528889797",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 2
+    }
+  ]
 }

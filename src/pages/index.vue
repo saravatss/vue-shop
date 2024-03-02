@@ -2,29 +2,48 @@
     <v-container>
         <h2>Каталог смартфонов</h2>
 
-        <v-catalog-card 
-            v-for="product in smartphones"
-            :id="product.id"
-            :image="product.image"
-            :title="product.title"
-            :category="product.categoryId"
-        />
+        <v-row>
+            <v-col 
+                v-for="product in smartphones"
+                span="3"
+                md="6"
+                sm="12"
+            >
+                <v-catalog-card 
+                    :id="product.id"
+                    :image="product.image"
+                    :title="product.title"
+                    :category="product.categoryId"
+                />
+            </v-col>
+        </v-row>
 
         <h2>Каталог laptops</h2>
 
-        <v-catalog-card 
-            v-for="product in smartphones"
-            :id="product.id"
-            :image="product.image"
-            :title="product.title"
-            :category="product.categoryId"
-        />
+        <v-row>
+            <v-col 
+                v-for="product in laptops"
+                span="3"
+                md="6"
+                sm="12"
+            >
+                <v-catalog-card 
+                    :id="product.id"
+                    :price="product.price"
+                    :image="product.image"
+                    :title="product.title"
+                    :category="product.categoryId"
+                />
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 
 <script setup>
     import { useCatalogCategory } from '@/composables/useCatalogCategory';
     import VContainer from '@/components/VContainer.vue';
+    import VRow from '@/components/UI/VRow.vue';
+    import VCol from '@/components/UI/VCol.vue';
     import VCatalogCard from '@/components/VCatalogCard.vue';
 
     const { 

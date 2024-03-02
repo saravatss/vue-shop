@@ -2,7 +2,7 @@
     <v-container>
         <div>
             <div>Логин</div>
-            <input type="text" v-model="model.username">
+            <input type="text" v-model="model.login">
         </div>
 
         <div>
@@ -11,6 +11,12 @@
         </div>
 
         <button @click="onLogin(model)">Войти</button>
+
+        <br><br>
+
+        <router-link to="/auth/sign-up">
+            Ещё не зарегистрированы?
+        </router-link>
     </v-container>  
 </template>
 
@@ -20,8 +26,8 @@
     import { useAuth } from '@/composables';
  
     const model = ref({
-        username: 'kminchelle',
-        password: '0lelplR'
+        login: 'Test',
+        password: '12345'
     });
 
     const { onLogin } = useAuth();

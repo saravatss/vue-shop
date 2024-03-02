@@ -3,4 +3,5 @@ export * from './useCatalogCategory';
 export * from './useSearch';
 export * from './useCatalog';
 export * from './useAuth';
-export * from './use'
+export * from './useRegistration';
+export * from './useUserProfile';

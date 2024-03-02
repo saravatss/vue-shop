@@ -1,68 +1,91 @@
 <template>
     <v-container>
-        <label>
-        <label>
+       <label>
             <div>Логин</div>
 
             <input type="text" v-model="model.login">
-        </label>
+       </label>
 
-            <div>Фамилия</div>
-
-            <input type="text" v-model="model.firstname">
-        </label>
-
-        <label>
+       <label>
             <div>Имя</div>
 
-            <input type="text" v-model="model.middlename">
-        </label>
+            <input type="text" v-model="model.firstname">
+       </label>
 
-        <label>
+       <label>
+            <div>Фамилия</div>
+
+            <input type="text" v-model="model.lastname">
+       </label>
+
+       <label>
+            <div>Email</div>
+
+            <input type="email" v-model="model.email">
+       </label>
+
+       <label>
             <div>Дата рождения</div>
 
             <input type="date" v-model="model.birthday">
-        </label>
+       </label>
 
-        <label>
-            <div>Email</div>
+       <label>
+            <div>Телефон</div>
 
-            <input type="date" v-model="model.email">
-        </label>
+            <input type="tel" v-model="model.phone">
+       </label>
 
-        <label>
-            <div></div>
-
-            <input type="number" v-model="model.phone">
-        </label>
-
-        <label>
+       <label>
             <div>Пароль</div>
 
-            <input type="date" v-model="model.password">
-        </label>
-
-        <label>
-            <div>Подтвердите пароль</div>
-
             <input type="password" v-model="model.password">
-        </label>
+       </label>
+
+       <label>
+            <div>Подтверждение пароля</div>
+
+            <input type="password" v-model="model.confirmPassword">
+       </label>
+
+        <br>
+
+       <button @click="onSubmit">Зарегистрироваться</button>
+
+
+       <br><br>
+
+     <router-link to="/auth/sign-in">
+          Уже зарегистрированы?
+     </router-link>
     </v-container>  
 </template>
 
 <script setup>
-import { ref } from 'vue';
+    import { ref } from 'vue';
     import VContainer from '@/components/VContainer.vue';
+    import { useRegistration } from '@/composables';
+
+    const { signUp } = useRegistration();
 
     const model = ref({
         login: 'Test',
-        firstname: 'Петров',
-        lastname: 'Вася',
-        birthday: '2001-01-13',
-        email:'hjdfhbjdfbhfdbh@gmail.com',
-        phone:'8484848488',
-        password: 'vgvg444',
-        confirmPasswaord: 'vgvg444'
+        lastname: 'Петров',
+        firstname: 'Петя',
+        birthday: '2024-02-15',
+        email: 'test@mail.ru',
+        phone: '+79528889797',
+        password: '12345',
+        confirmPassword: '12345'
+    });
 
-    })
+    function onSubmit () {
+     if (model.value.password !== model.value.confirmPassword) {
+          alert('Пароли не совпадают')
+
+          return;
+     }
+
+     signUp(model.value);
+    }
 </script>

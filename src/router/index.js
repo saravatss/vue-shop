@@ -20,7 +20,7 @@ const routes = [
         }
     },
     { 
-        name: 'SignUn',
+        name: 'SignUp',
         path: '/auth/sign-up', 
         component: () => import('@/pages/auth/sign-up.vue'),
         meta: {
@@ -67,6 +67,14 @@ const routes = [
         meta: {
             auth: false,
             title: 'Корзина'
+        }
+    },
+    { 
+        name: 'Ordering',
+        path: '/ordering', 
+        component: () => import('@/pages/ordering.vue'),
+        meta: {
+            auth: true
         }
     },
     { 

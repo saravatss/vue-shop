@@ -10,24 +10,40 @@
 
         <br>
 
-        <input type="number" v-model="count">
+        <div>
+            {{ price }} р.
+        </div>
 
         <br>
 
-        <button @click="onAddToCart">
+        <v-input-number v-model="count"/>
+
+        <br>
+
+        <v-button
+            theme="primary"
+            size="large"
+            wide
+            @click="onAddToCart"
+        >
             Добавить в корзину
-        </button>
+        </v-button>
     </article>
 </template>
 
 <script setup>
     import { ref } from 'vue';
+    import VButton from '@/components/UI/VButton.vue';
+    import VInputNumber from '@/components/UI/VInputNumber.vue';
 
     const props = defineProps({
         category: {
             type: [String, Number]
         },
         id: {
+            type: Number
+        },
+        price: {
             type: Number
         },
         title: {
@@ -46,6 +62,9 @@
 
     function onAddToCart () {
         emit('addToCart', {
+            title: props.title,
+            image: props.image,
+            price: props.price,
             id: props.id,
             quantity: count.value
         });
